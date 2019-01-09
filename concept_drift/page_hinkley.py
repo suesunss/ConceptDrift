@@ -1,4 +1,8 @@
-"""Page-Hinkley"""
+"""
+Implementation of Chapter 5.1:
+
+On evaluating stream learning algorithms
+"""
 
 
 class PageHinkley:
@@ -39,7 +43,7 @@ class PageHinkley:
         # calculate the average and sum
         self.num += 1
         self.x_mean = (x + self.x_mean * (self.num - 1)) / self.num
-        self.sum = self.sum * self.alpha_ + x - self.x_mean - self.delta_
+        self.sum = self.sum * self.alpha_ + (x - self.x_mean - self.delta_)
 
         self.change_detected = True if self.sum > self.lambda_ else False
         if self.change_detected:
